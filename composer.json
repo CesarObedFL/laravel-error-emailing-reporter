@@ -1,0 +1,42 @@
+{
+    "name": "cesarobedfl/laravel-error-emailing-reporter",
+    "description": "Report runtime errors to developers via SMTP in production environments.",
+    "keywords": ["laravel", "error", "reporter", "mail", "smtp", "monitoring"],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "César Obed Figueroa Luna",
+            "email": "contact@cesarobedfl.pro"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/mail": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/http": "^11.0 || ^12.0 || ^13.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0",
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "cesarobedfl\\ProdErrorReporter\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "cesarobedfl\\ProdErrorReporter\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "cesarobedfl\\ProdErrorReporter\\ProductionErrorReporterServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
